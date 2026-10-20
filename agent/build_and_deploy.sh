@@ -31,7 +31,7 @@ security_group_id="<vpc-security-group>"
 # Project setup
 uv init --name postgres-agent --description "Strands Agent for Postgres Text-to-SQL" --python 3.13 --bare
 uv lock
-uv add strands-agents fastmcp postgres-mcp boto3 bedrock-agentcore
+uv add strands-agents postgres-mcp boto3 bedrock-agentcore
 
 # ECR login and repository creation
 aws ecr get-login-password --region $region | docker login --username AWS --password-stdin $aws_account_id.dkr.ecr.$region.amazonaws.com
